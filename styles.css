@@ -99,6 +99,7 @@ section p {
 .photos {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allow images to wrap onto the next line */
     gap: 20px;
 }
 
@@ -187,9 +188,16 @@ footer {
         padding: 15px;
     }
 
+    /* Ensure images fit and stack vertically on smaller screens */
+    .photos {
+        flex-direction: column; /* Stack images vertically on mobile */
+        align-items: center;    /* Center the images */
+    }
+
     .photos img {
-        width: 100%; /* Ensure images fit the screen on mobile devices */
-        height: auto; /* Keep the image ratio intact on smaller screens */
+        width: 100%;           /* Ensure images fit the screen width */
+        height: auto;          /* Maintain aspect ratio */
+        max-width: 90vw;       /* Limit the image width to 90% of the viewport */
     }
 
     .video-section video {
